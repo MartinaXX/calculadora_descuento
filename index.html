@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA</title>
+</head>
+<body>
+    <h1>Calculadora de Descuento</h1>
+    <label for="precio">Precio</label>
+    <input type="number" id="precio">
+    <label for="descuento">Descuento</label>
+    <input type="number" id="descuento">
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+    
+    <script>function calcular(){
+        let precio = Number(document.getElementById("precio").value)
+        if(precio < 0){
+            alert("Hay un error en el precio. Es negativo")
+            document.getElementById("resultado").textContent = ""
+            return
+        }
+
+
+        let descuento = Number(document.getElementById("descuento").value)
+
+        let dec_descuento = (descuento / 100)
+
+        let resultado_descuento = (precio * dec_descuento)
+
+        let precio_final = (precio - resultado_descuento)
+
+        document.getElementById("resultado").textContent = precio_final
+
+    }
+    </script>
+
+</body>
+</html>
+
